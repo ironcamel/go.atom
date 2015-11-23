@@ -1,6 +1,9 @@
 package atom
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+	"io"
+)
 
 type XMLFeed struct {
 	XMLName      xml.Name         `xml:"feed"`
@@ -94,4 +97,10 @@ type XMLSubtitle struct {
 type XMLMultiType struct {
 	Type *string `xml:"type,attr"`
 	Raw  string  `xml:",innerxml"`
+}
+
+func DecodeEntry(r io.Reader) (*XMLEntry, error) {
+	var entry XMLEntry
+	err := xml.NewDecoder(r).Decode(&entry)
+	return &entry, err
 }
