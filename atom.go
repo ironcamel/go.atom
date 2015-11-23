@@ -7,6 +7,7 @@ import (
 
 type XMLFeed struct {
 	XMLName      xml.Name         `xml:"feed"`
+	Namespace    *string          `xml:"xmlns,attr"`
 	Id           *string          `xml:"id"`
 	Title        *XMLTitle        `xml:"title"`
 	Updated      *string          `xml:"updated"`
@@ -24,6 +25,7 @@ type XMLFeed struct {
 
 type XMLEntry struct {
 	XMLName      xml.Name         `xml:"entry"`
+	Namespace    *string          `xml:"xmlns,attr"`
 	Id           *string          `xml:"id"`
 	Title        *XMLTitle        `xml:"title"`
 	Updated      *string          `xml:"updated"`
@@ -38,7 +40,8 @@ type XMLEntry struct {
 
 type XMLEntryContent struct {
 	XMLName xml.Name `xml:"content"`
-	XMLMultiType
+	Type    *string  `xml:"type,attr"`
+	Raw     string   `xml:",innerxml"`
 }
 
 type XMLAuthor struct {
@@ -76,22 +79,26 @@ type XMLCategory struct {
 
 type XMLTitle struct {
 	XMLName xml.Name `xml:"title"`
-	XMLMultiType
+	Type    *string  `xml:"type,attr"`
+	Raw     string   `xml:",innerxml"`
 }
 
 type XMLSummary struct {
 	XMLName xml.Name `xml:"summary"`
-	XMLMultiType
+	Type    *string  `xml:"type,attr"`
+	Raw     string   `xml:",innerxml"`
 }
 
 type XMLRights struct {
 	XMLName xml.Name `xml:"rights"`
-	XMLMultiType
+	Type    *string  `xml:"type,attr"`
+	Raw     string   `xml:",innerxml"`
 }
 
 type XMLSubtitle struct {
 	XMLName xml.Name `xml:"subtitle"`
-	XMLMultiType
+	Type    *string  `xml:"type,attr"`
+	Raw     string   `xml:",innerxml"`
 }
 
 type XMLMultiType struct {
