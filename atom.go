@@ -36,6 +36,7 @@ type XMLEntry struct {
 	Categories   []XMLCategory    `xml:"category"`
 	Contributors []XMLContributor `xml:"contributor"`
 	Published    *string          `xml:"published"`
+	IntId        *int
 }
 
 type XMLEntryContent struct {
