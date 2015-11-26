@@ -36,7 +36,7 @@ type XMLEntry struct {
 	Categories   []XMLCategory    `xml:"category"`
 	Contributors []XMLContributor `xml:"contributor"`
 	Published    *string          `xml:"published"`
-	IntId        *int
+	IntId        *int             `xml:"-"`
 }
 
 type XMLEntryContent struct {
@@ -70,7 +70,7 @@ type XMLLink struct {
 	Rel      *string  `xml:"rel,attr"`
 	Hreflang *string  `xml:"hreflang,attr"`
 	Title    *string  `xml:"title,attr"`
-	Length   *string  `xml:"length,attr"`
+	Length   *int     `xml:"length,attr"`
 }
 
 type XMLCategory struct {
