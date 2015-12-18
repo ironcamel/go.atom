@@ -112,3 +112,9 @@ func DecodeEntry(r io.Reader) (*XMLEntry, error) {
 	err := xml.NewDecoder(r).Decode(&entry)
 	return &entry, err
 }
+
+func DecodeFeed(r io.Reader) (*XMLFeed, error) {
+	var feed XMLFeed
+	err := xml.NewDecoder(r).Decode(&feed)
+	return &feed, err
+}
