@@ -10,9 +10,9 @@ type XMLFeed struct {
 	Namespace    *string          `xml:"xmlns,attr"`
 	Id           *string          `xml:"id"`
 	Title        *XMLTitle        `xml:"title"`
+	Subtitle     *XMLSubtitle     `xml:"subtitle"`
 	Updated      *string          `xml:"updated"`
 	Author       *XMLAuthor       `xml:"author"`
-	Entries      []XMLEntry       `xml:"entry"`
 	Links        []XMLLink        `xml:"link"`
 	Categories   []XMLCategory    `xml:"category"`
 	Contributors []XMLContributor `xml:"contributor"`
@@ -20,7 +20,7 @@ type XMLFeed struct {
 	Icon         *string          `xml:"icon"`
 	Logo         *string          `xml:"logo"`
 	Rights       *XMLRights       `xml:"rights"`
-	Subtitle     *XMLSubtitle     `xml:"subtitle"`
+	Entries      []XMLEntry       `xml:"entry"`
 }
 
 type XMLEntry struct {
